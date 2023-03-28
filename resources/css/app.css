@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar-menu li .sidebar-menu__item:hover::after,
+.sidebar-menu li.active .sidebar-menu__item::after {
+    content: "";
+    @apply absolute block right-0 top-[0.25rem] w-2 h-3/4 bg-blue-400 rounded-tl-md rounded-bl-md
+}
+
+.sidebar-menu li a.sidebar-menu__red:hover::after,
+.sidebar-menu li.active a.sidebar-menu__red::after {
+    content: "";
+    @apply absolute block right-0 top-0 w-2 h-full bg-red-400 rounded-tl-md rounded-bl-md
+}
+
+.sidebar-menu__item {
+    @apply relative flex flex-row items-center h-11 focus:outline-none text-slate-400 hover:text-slate-200
+}
+.sidebar-menu__subitem {
+    @apply relative flex flex-row items-center h-11 focus:outline-none text-slate-400 hover:text-slate-200 ml-11
+}
+
+.sidebar-menu .sidebar-menu__subitem.active,
+.sidebar-menu li.active .sidebar-menu__item {
+    @apply text-slate-200
+}
